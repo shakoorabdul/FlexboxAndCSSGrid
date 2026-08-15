@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Green Garden House</title>
+    <!-- Google Fonts for clean serif and sans-serif styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS Reset & Variables --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-green: #4A7023;
+            --text-dark: #2C351E;
+            --bg-light: #FFFFFF;
+            --font-header: 'Cinzel', serif;
+            --font-body: 'Lora', serif;
+            --font-nav: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: #fcfcfc;
+            line-height: 1.6;
+        }
+
+        /* --- Default View CSS Rules --- */
+
+        * {
+            float: none !important;
+            clear: none !important;
+            overflow: visible;
+        }
+
+        #pagecontainer {
+            display: grid;
+            grid-template-columns: 200px auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-light);
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+
+        header, footer {
+            grid-column: 1 / -1;
+        }
+
+        /* --- Header Section --- */
+        header {
+            background: linear-gradient(rgba(74, 112, 35, 0.4), rgba(74, 112, 35, 0.4)), 
+                        url('imgs/hand-grips-a-gardening-tool-to-cut-back-a-plant.jpg') no-repeat center center;
+            background-size: cover;
+            min-height: 180px;
+            display: flex;
+            align-items: center;     
+            justify-content: center; 
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-family: var(--font-header);
+            font-size: 2.7rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+            margin: 0;
+            line-height: 1.2;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            padding: 20px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #8fa874;
+            font-family: var(--font-nav);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        /* --- Main Content --- */
+        main {
+            padding: 0 0 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-content-inner {
+            padding: 0 20px;
+        }
+
+        .sub-hero-img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            display: block;
+            margin-top: 0;
+            margin-bottom: 30px;
+            margin-right: 0;
+            margin-left: 0;
+            border-radius: 0;
+        }
+
+        .welcome-section h2 { 
+            font-family: var(--font-header); 
+            color: var(--primary-green); 
+            font-size: 1.3rem; 
+            letter-spacing: 1px; 
+            margin-bottom: 20px; 
+            font-weight: 700; 
+        }
+
+        .welcome-section p {
+            font-size: 1rem;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        #multicol {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .item25 {
+            width: 23%;
+            box-shadow: 0px 0px 20px #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: #fdfdfd;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            line-height: 1;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            user-select: none;
+        }
+
+        .item25 h3 {
+            font-family: var(--font-header);
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* --- Address Info Section --- */
+        .address-section {
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .address-section h4 {
+            font-family: var(--font-nav);
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .address-section address {
+            font-style: normal;
+        }
+
+        .address-section p {
+            font-style: italic;
+            margin-bottom: 8px;
+            color: #4a4a4a;
+        }
+
+        .address-section a {
+            color: var(--primary-green);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: #ffffff;
+            padding: 40px 20px;
+            font-family: var(--font-nav);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        footer > div {
+            flex-grow: 1;
+            padding-left: 10%;
+        }
+
+        footer h5 {
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        footer p, 
+        footer ul {
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            line-height: 1.6;
+            list-style: none;
+        }
+
+        footer nav {
+            border-bottom: none;
+            padding: 0;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        #copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: none;
+            font-size: 0.85rem;
+        }
+
+        /* --- Tablet View Media Query (601px - 1023px) --- */
+        @media screen and (min-width: 601px) and (max-width: 1023px) {
+            #pagecontainer {
+                display: block;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            nav {
+                border-bottom: 1px solid #e2e8f0;
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            #multicol {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .item25 {
+                width: 48%;
+            }
+
+            footer > div {
+                padding-left: 5%;
+            }
+
+            footer nav ul {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        /* --- Mobile View Media Query (<= 600px) --- */
+        @media screen and (max-width: 600px) {
+            #pagecontainer {
+                display: block;
+            }
+
+            header {
+                min-height: 140px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            nav {
+                padding: 15px;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .main-content-inner {
+                padding: 0 15px;
+            }
+
+            .welcome-section h2 {
+                font-size: 1.15rem;
+            }
+
+            #multicol {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .item25 {
+                width: 100%;
+            }
+
+            footer {
+                flex-direction: column;
+                padding: 30px 15px;
+            }
+
+            footer > div {
+                width: 100%;
+                padding-left: 0;
+                margin-bottom: 25px;
+            }
+
+            footer nav ul {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pagecontainer">
+        
+        <!-- Header Section -->
+        <header id="heroimg">
+            <h1>Gabriel Green Garden House</h1>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="plants.html">Plants</a></li>
+                <li><a href="#gardening">Gardening</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main>
+            <img class="sub-hero-img" src="imgs/zen-garden-with-autumn-colors.jpg" alt="Zen Garden with Autumn Colors">
+
+            <div class="main-content-inner">
+                <section class="welcome-section">
+                    <h2>WELCOME TO GABRIEL GREEN GARDEN HOUSE</h2>
+                    <p>
+                        Gabriel Green Garden House is a community for plant lovers more than just a garden house. Lorem 
+                        ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nulla metus. Vestibulum sagittis, purus eu 
+                        condimentum gravida, erat dui bibendum lorem, non rutrum tortor lacus eu felis. Lorem ipsum dolor 
+                        sit amet, consectetur adipiscing elit. Pellentesque sodales eget elit sit amet facilisis.
+                    </p>
+                </section>
+
+                <section id="multicol">
+                    <div class="item25">
+                        <span class="feature-icon">♚</span>
+                        <h3>Garden Center</h3>
+                    </div>
+
+                    <div class="item25">
+                        <span class="feature-icon">☙</span>
+                        <h3>Landscape & Gardening Ideas</h3>
+                    </div>
+
+                    <div class="item25">
+                        <span class="feature-icon">🌤</span>
+                        <h3>Indoor & Outdoor Plants</h3>
+                    </div>
+
+                    <div class="item25">
+                        <span class="feature-icon">⚘</span>
+                        <h3>Planters</h3>
+                    </div>
+                </section>
+
+                <section class="address-section">
+                    <h4>ADDRESS</h4>
+                    <address>
+                        <p>299 Doon Valley Drive</p>
+                        <p>Kitchener, Ontario N2G 4M4, Canada</p>
+                        <p>Phone: 519-777-5220</p>
+                        <p>Email: <a href="mailto:customer@gabrielgreen.com">customer@gabrielgreen.com</a></p>
+                    </address>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-section">
+                <h5>Store Hours</h5>
+                <p>Mon-Sat: 8am - 6pm<br>Sun: 10am - 4pm</p>
+            </div>
+
+            <div class="footer-section">
+                <h5>Stores</h5>
+                <p>Kitchener<br>Waterloo<br>Cambridge<br>Guelph</p>
+            </div>
+
+            <div class="footer-section">
+                <h5>Quick Links</h5>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="plants.html">Plants</a></li>
+                        <li><a href="#gardening">Gardening</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="copyright">
+                <p>Copyright &copy; 2026 Gabriel Green Garden House</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
