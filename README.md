@@ -21,12 +21,11 @@ Technical Breakdown
 What Will Be Delivered
 1.	index.html: The structure of the page (forms, summary cards, chart area, table).
 2.	styles.css: CSS layout (Grid/Flexbox) making it responsive across devices.
-3.	app.js: All JavaScript logic (Classes, Chart.js, saving, events).
+3.	app.js: All JavaScript logic (Classes, saving, events).
 4.	Live Site & Code Repository: A GitHub repository with at least 15 commits, published live on GitHub Pages, Netlify, or Vercel.
 Execution Plan
 Setup & Core Classes
 •	Set up Git repository and create standard files (index.html, styles.css, app.js).
-•	Connect Chart.js via CDN in index.html.
 •	Write the Transaction and RecurringTransaction JavaScript classes.
 Data Management & Storage
 •	Build the AccountManager class to handle array operations (add, delete, total calculations, filter).
